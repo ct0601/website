@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 	
+<title>works</title>
+</head>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		ul {                                 
+			z-index: 1;      /* 层次为1，使导航栏浮在上面 */
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;    /*溢出隐藏*/
+			background-color: cadetblue;
+			position: fixed;  /*固定位置*/
+			top: 0;
+			width: 100%;
+		}
+		li {
+			display:float;
+			float: left;
+		}
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 1em 1em;
+			text-decoration: none;
+		}
+		li a:hover {                 
+			background-color: white;     /*鼠标经过时变色*/
+			color:cadetblue;
+		}
+		.b{
+			background-color: steelblue;    /*第一个按钮的底色*/
+		}
+		.top{
+			width: 100%;
+			float:left;
+			height: 5em;
+		}
+		.show{
+			width:80%;
+			height: 46em;
+			text-align: center;
+			margin: 0 auto;
+			background-color: cadetblue;
+			color: white;
+		}
+		.btn{
+			width: 80%;
+			height: 10em;
+			background: white;
+			text-align: center;
+			margin: 0 auto;
+		}
+		iframe{
+			width: 70%;
+			height: 30em;
+		}
+		button{
+			width:20%;
+			height: 2em;
+			font-size: 2em;
+			color: cadetblue;
+		}
+	</style>
+	
+<body>
+	<ul>
+		<li><a href="index.html" target="_self" >替的主页</a></li>
+		<li><a href="hobby.html"target="_self">兴趣爱好</a></li>
+		<li><a href="works.html"target="_self" class="b">近期作品</a></li>
+		<li><a href="future.html"target="_self">未来计划</a></li>
+		<li><a href="contact.html"target="_self" >联系方式</a></li>
+	</ul>
+	<div class="top"></div>
+	<div class="show" id="1" >
+		<iframe src="https://www.bilibili.com/"  ></iframe>
+		<br/>
+		<h2>B站作品标题如下：</h2>
+		<h3>【BAD GUY】在英国的尬舞时刻 </br>【杭州电子科技大学抖肩舞·出道篇】这里是 AKA杭电拉宏桑 vs 杭电影流之zhu</h3>		
+	</div>
+	<div class="show" id="2"style="display:none;">
+		<img src="1.jpg" style="width: 40%;" id="photo";>
+	</div>
+	<div class="show" id="3"style="display:none;">
+		<video  width=60% controls="controls"; id="video" ><source src="1.mp4" type="video/mp4"></video>
+		<br/><br/>
+		<button style="background:steelblue;color: white; " onClick="getnext()">NEXT</button>
+	</div>
+	<div class="show" id="4" style="display: none;">
+		<iframe id="music"src="www.baidu.com">
+		</iframe>
+	</div>
+	<div class="btn" >
+		<br/><br/>
+		<button onClick="getBz()">B站视频</button>
+		<button onClick="getArt()">绘画作品</button>
+		<button onClick="getDance()">跳舞展示</button>
+		<button onClick="getMusic()">全民K歌</button>
+	</div>
+	<script>
+		var div1=document.getElementById("1");
+		var div2=document.getElementById("2");
+		var div3=document.getElementById("3");
+		var div4=document.getElementById("4");
+		var pic = document.getElementById("photo");
+		window.onload = setInterval(step,2000);
+		var music=document.getElementById("music");
+		var num = 1;
+		var i=1;
+		function getBz(){
+			div1.style.display="block";
+			div2.style.display="none";
+			div3.style.display="none";
+			div4.style.display="none";
+			music.src="www.baidu.com";
+		}
+		function getArt(){
+			div1.style.display="none";
+			div2.style.display="block";
+			div3.style.display="none";
+			div4.style.display="none";
+			music.src="www.baidu.com";
+		}
+		function getDance(){
+			div1.style.display="none";
+			div2.style.display="none";
+			div3.style.display="block";
+			div4.style.display="none";
+			music.src="www.baidu.com";
+		}
+		function getMusic(){
+			div1.style.display="none";
+			div2.style.display="none";
+			div3.style.display="none";
+			div4.style.display="block";
+			music.src="https://kg.qq.com/node/play?s=YW_vXoYfL8CRlYwz&shareuid=669b9a8d2028348e&topsource=a0_pn201001004_z11_u46785535_l0_t1594738735__&g_f="
+		}
+		function step(){
+			if( num <9)
+			{
+				num++;
+			}
+			else {num = 1;}
+			pic.src=num+'.jpg';
+		}
+		function getnext(){
+			if( i <3)
+			{
+				i++;
+			}
+			else {i = 1;}
+			var dance=document.getElementById("video");
+			dance.src= i+'.mp4';
+		}
+	</script>
+</body>
+</html>

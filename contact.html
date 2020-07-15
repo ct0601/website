@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 	
+<title>Contact</title>
+</head>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		ul {                                 
+			z-index: 1;      /* 层次为1，使导航栏浮在上面 */
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;    /*溢出隐藏*/
+			background-color: cadetblue;
+			position: fixed;  /*固定位置*/
+			top: 0;
+			width: 100%;
+		}
+		li {
+			display:float;
+			float: left;
+		}
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 1em 1em;
+			text-decoration: none;
+		}
+		li a:hover {                 
+			background-color: white;     /*鼠标经过时变色*/
+			color:cadetblue;
+		}
+		.b{
+			background-color: steelblue;    /*第一个按钮的底色*/
+		}
+		.top{
+			width: 100%;
+			height: 40em;
+			text-align: center;
+			color: steelblue;
+		}
+		.bottom{
+			float: left;
+			width: 100%;
+			height: 15em;
+			color: white;
+			text-align: center;
+			background-color: cadetblue;
+		}
+		button{
+			width: 3em;
+			height: 8em;
+			color: steelblue;
+			background-color: white;
+		}
+	</style>
+<body>
+	<ul>
+		<li><a href="index.html" target="_self" >替的主页</a></li>
+		<li><a href="hobby.html"target="_self">兴趣爱好</a></li>
+		<li><a href="works.html"target="_self">近期作品</a></li>
+		<li><a href="future.html"target="_self">未来计划</a></li>
+		<li><a href="contact.html"target="_self" class="b">联系方式</a></li>
+	</ul>
+	<div class="top">
+		</br></br></br></br></br></br>
+		<img src="bqb.gif" id="photo">
+		<h2 id="word">感谢您对本网站的浏览！</h2>
+		<button onClick="getVX()" id="btn"style= "display:inline">微信二维码</button>
+	</div>
+	<div class="bottom">
+		<h3 class="wz">与我联系</h3>
+		<p>如果方便，你可以留个邮箱和我沟通联络</p>	
+      		<input type="text" placeholder="someone@email.com" id="mail" name="email" >
+      		<input type="submit" value="提交" name="submit"/>		
+   		<br/>
+		<br/>
+		<img src="qq.gif" >
+		<img src="weibo.gif" >
+		<img src="tuite.gif" >
+		<img src="global.gif" >
+	</div>
+	<script>
+		function getVX(){
+			var photo=document.getElementById("photo");
+			photo.src="VX.png";
+			document.getElementById("word").innerHTML=("这是我的微信二维码");
+			document.getElementById("btn").style.display="none";
+		}
+	</script>
+</body>
+</html>

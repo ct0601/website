@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 	
+<title>替仔Zone</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		ul {                                 
+			z-index: 1;      /* 层次为1，使导航栏浮在上面 */
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;    /*溢出隐藏*/
+			background-color: cadetblue;
+			position: fixed;  /*固定位置*/
+			top: 0;
+			width: 100%;
+		}
+		li {
+			display:float;
+			float: left;
+		}
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 1em 1em;
+			text-decoration: none;
+		}
+		li a:hover {                 
+			background-color: white;     /*鼠标经过时变色*/
+			color:cadetblue;
+		}
+		.b{
+			background-color: steelblue;    /*第一个按钮的底色*/
+		}
+		button{
+			background: white;
+			height: 4em;
+			width: 8em;
+			margin: 3em;
+			border-radius: 40%;
+			
+		}
+		button:hover {
+    		background: cadetblue;
+			color: white;
+		}
+		.me{
+			text-align: center;
+			float: left;
+			width: 100%;
+			height: 60em;
+			background-image: url(white.jpg);
+			background-size: cover;
+			
+		}
+		.space{
+			float: left;
+			width: 100%;
+			height: 4em;
+			
+		}
+		.photo{
+			height:35em;
+			width:35em;
+			border: 1em solid steelblue;
+			border-radius:50%; 
+			overflow:hidden;
+			background-image: url(me.jpg);
+			background-size: cover;
+			display:inline-block;
+		}
+		.photo .tooltiptext {                    /*鼠标经过头像时显示文字*/
+			visibility: hidden;
+			width: 20em;
+			background-color: steelblue;
+			color: #fff;
+			text-align: center;
+			border-radius: 1em;
+			padding: 1em 0;
+			position: absolute;
+			z-index: 1;
+			}
+		.photo:hover .tooltiptext {     
+			    visibility: visible;
+			}
+		.logo{
+			margin-top: -5em;
+			text-align: center;
+			width: 100%;
+			height: 11em;
+		}
+		.line{
+			width:5em;
+			height:1.5em;
+			background:steelblue;
+			transition:width 6s;
+			position: absolute;
+			top: 7em;
+			left:35em;
+			overflow:hidden;
+			text-overflow:clip;
+			font-size: 1em;
+			color: white;
+			
+		}
+		.line:hover{
+			width:35em;
+			background:cadetblue;
+		}
+	</style>
+</head>
+			
+<body>
+	<ul>
+		<li><a href="index.html" target="_self" class="b">替的主页</a></li>
+		<li><a href="hobby.html"target="_self">兴趣爱好</a></li>
+		<li><a href="works.html"target="_self">近期作品</a></li>
+		<li><a href="future.html"target="_self">未来计划</a></li>
+		<li><a href="contact.html"target="_self">联系方式</a></li>
+	</ul>
+	<div class="me">
+		<span id="home" name="home"></span>
+		<div class="space">
+		</div>
+		<div class="line">
+			个性签名：多读书，多看报，少吃零食多睡觉，有空一起去爬山吗，我拍照。
+		</div>
+		<button onclick="displayName()">MyName</button>
+		<button onclick="displayBirth()">MyBirthday</button>
+		<div class="photo" id="photo" onclick="displayDate()">
+			<span class="tooltiptext">麻烦给我的老师来一杯Mojito<br/>
+			我喜欢阅读他捞人时的眼眸<br/>而我的作业 平时分太多<br/>这课程已经因为他甜得过头</span>
+		</div>
+		<button onclick="displaySkill()">MySkill</button>
+		<button onclick="displayLikes()">MyLikes</button>
+		<div class="logo">
+			<img src="logo.png">
+		</div>
+		<audio controls>
+ 			 <source src="mojito.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+	<script>
+		var date=new Date();
+		var hour=date.getHours();
+		var minute=date.getMinutes();
+		var second=date.getSeconds();
+		function displayDate(){
+			alert("替仔为您播报时间，您进入页面的时间是"+hour+"时"+minute+"分"+second+"秒！");
+		}
+		function displayName(){
+			alert("你可以叫我替仔或是替替，因为我的名字缩写是CT")
+		}
+		function displayBirth(){
+			alert("是六月一日儿童节哦~")
+		}
+		function displaySkill(){
+			alert("唱歌跳舞画画写作我都只会一点点点")
+		}
+		function displayLikes(){
+			alert("世间万物皆可爱")
+		}
+	</script>
+	
+</body>
+</html>
